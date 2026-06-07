@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.HTML" class="navbar-logo"><img src="Logo.png" alt=""></a>
+            <button class="navbar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="Home.HTML">Home</a></li>
+                <li><a href="Clothes.HTML">Clothes</a></li>
+                <li><a href="Kart.HTML">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container-kart">
+        <form action="">
+            <div class="row">
+                <div class="column">
+                    <h3 class="title">Billing Details</h3>
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" placeholder="John" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="Last Name">Last Name</span>
+                        <input type="text" placeholder="Doe" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="Email">Email</span>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="city">City</span>
+                        <input type="text" placeholder="New York" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="Billing">Billing Address</span>
+                        <input type="text" placeholder="123 Main St" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="state">State</span>
+                        <input type="text" placeholder="NY" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="Number">Phone Number</span>
+                        <input type="text" placeholder="123-456-7890" required>
+                    </div>
+                </div>
+            </div>
+             <div class="column">
+                    <h3 class="title">Payment</h3>
+                    <div class="input-box">
+                        <span class="CardAccpeted">Card Accepted</span>
+                         <img src="images/visa.png" alt="Visa">
+                         <img src="images/mastercard.png" alt="MasterCard">
+                         <img src="images/amex.png" alt="American Express">
+                         <img src="images/discover.png" alt="Discover">
+                    </div>
+                    <div class="input-box">
+                        <span class="Creditcardnumber">Credit Card Number</span>
+                        <input type="text" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="Nameoncard">Name on Card</span>
+                        <input type="text" placeholder="Mr. John Doe" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="Expmonth">Expiration Month</span>
+                        <input type="text" placeholder="01" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="Expyear">Expiration Year</span>
+                        <input type="text" placeholder="2023" required>
+                    </div>
+                    <button type="submit" class="sumbit">Submit Payment</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </form>
+    </div>
+    
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let total = 0;
+
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+    });
+
+    let totalSpan = document.querySelector(".total span");
+
+    if (totalSpan) {
+        totalSpan.innerText = total;
+    }
+
+});
+</script>
+</html> 
+
